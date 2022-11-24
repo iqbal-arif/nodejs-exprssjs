@@ -1,0 +1,16 @@
+<header>
+    <div><a href="/">WDE</a></div>
+    <nav>
+        <ul>
+            <% if (locals.isAuth) { %>
+                  <li>
+                    <form action="/logout" method="POST">
+                         <!-- Custom CSRF Token -->
+                        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                        <button>Logout</button></li>
+                    </form>
+            <% } %>
+        </ul>
+
+    </nav>
+</header>
